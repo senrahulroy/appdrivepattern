@@ -1,12 +1,21 @@
 import 'package:appdrivepattern/common/widget/button/common_primary.dart';
 import 'package:appdrivepattern/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
+import 'package:get/get.dart';
 import '../../../../../common/login_singup/form_text_field_with_label.dart';
 import '../../../../../common/widget/text_form_field/common_text_form_field.dart';
+import '../../../../../navigation_menu.dart';
 
-class SingUpForm extends StatelessWidget {
+class SingUpForm extends StatefulWidget {
   const SingUpForm({super.key});
+
+  @override
+  State<SingUpForm> createState() => _SingUpFormState();
+}
+
+class _SingUpFormState extends State<SingUpForm> {
+  bool isPassVisible = true;
+  bool isPassCVisible = true;
 
   @override
   Widget build(BuildContext context) {
@@ -49,23 +58,47 @@ class SingUpForm extends StatelessWidget {
                 hintText: 'Email',
               )),
           const SizedBox(height: RSizes.spaceBtwItems),
-          const FormTextFieldWithLabel(
-              label: 'Passwort',
+            FormTextFieldWithLabel(
+              label: 'Password',
               textField: CommonTextField(
-                hintText: 'Passwort',
+                isObscureText: isPassVisible,
+                hintText: 'Password',
+                suffix: GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        isPassVisible =! isPassVisible;
+                      });
+
+                    },
+                    child: Icon(isPassVisible
+                        ? Icons.visibility_off_outlined
+                        : Icons.visibility_outlined)),
               )),
 
           const SizedBox(height: RSizes.spaceBtwItems),
-          const FormTextFieldWithLabel(
-              label: 'Bestätigen',
+            FormTextFieldWithLabel(
+              label: 'Confirm password',
               textField: CommonTextField(
-                hintText: 'Bestätigen',
+                isObscureText: isPassCVisible,
+                hintText: 'Confirm password',
+                suffix: GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        isPassCVisible =! isPassCVisible;
+                      });
+
+                    },
+                    child: Icon(isPassCVisible
+                        ? Icons.visibility_off_outlined
+                        : Icons.visibility_outlined)),
               )),
           const SizedBox(height: RSizes.spaceBtwItems),
           /// login btn
           CommonPrimaryButton(
-            btnTitle: 'Account erstellen',
-            onPressed: () {},
+            btnTitle: 'Create my account',
+            onPressed: () {
+              Get.to(()=>const NavigationMenu());
+            },
           )
         ],
       ),

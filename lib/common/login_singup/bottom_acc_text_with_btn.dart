@@ -25,7 +25,7 @@ class BottomAccountTextWithButton extends StatelessWidget {
           onPressed: onPressed,
           child: Text(
             subTitleBtn,
-            style: TextStyle(fontSize: 15, color: Colors.blue),
+            style: const TextStyle(fontSize: 15, color: Colors.blue),
           ),
         )
       ],

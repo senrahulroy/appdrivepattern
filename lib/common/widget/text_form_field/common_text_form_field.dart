@@ -31,7 +31,7 @@ class CommonTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(8)),
         boxShadow: [
           BoxShadow(
@@ -52,6 +52,7 @@ class CommonTextField extends StatelessWidget {
         controller: controller,
         focusNode: focusNode,
         obscureText: isObscureText ?? false,
+        obscuringCharacter: '*',
         autovalidateMode: AutovalidateMode.onUserInteraction,
         textCapitalization: TextCapitalization.words,
         inputFormatters: inputFormatters,

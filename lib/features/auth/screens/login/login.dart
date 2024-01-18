@@ -1,5 +1,5 @@
 import 'package:appdrivepattern/common/login_singup/auth_divider.dart';
-import 'package:appdrivepattern/common/login_singup/auth_footer_SocialButtons.dart';
+import 'package:appdrivepattern/common/login_singup/auth_footer_social_buttons.dart';
 import 'package:appdrivepattern/features/auth/screens/login/widget/login_form.dart';
 import 'package:appdrivepattern/features/auth/screens/signup/signup.dart';
 import 'package:appdrivepattern/utils/constants/colors.dart';
@@ -32,7 +32,7 @@ class LoginScreen extends StatelessWidget {
 
             ///
             const AuthDivider(
-              dividerText: 'oder',
+              dividerText: 'Or',
             ),
 
             /// other login
@@ -43,8 +43,8 @@ class LoginScreen extends StatelessWidget {
 
             /// don't have a account
             BottomAccountTextWithButton(
-              title: 'Du hast noch keinen Account?',
-              subTitleBtn: 'Jetzt erstellen',
+              title: 'Don’t have an account yet?',
+              subTitleBtn: 'Create an account',
               onPressed: () {
                 Get.off(()=> const SignupScreen());
               },
