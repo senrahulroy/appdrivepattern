@@ -1,18 +1,16 @@
-import 'package:appdrivepattern/common/login_singup/auth_divider.dart';
-import 'package:appdrivepattern/common/login_singup/auth_footer_SocialButtons.dart';
-import 'package:appdrivepattern/features/auth/screens/login/widget/login_form.dart';
-import 'package:appdrivepattern/features/auth/screens/signup/signup.dart';
-import 'package:appdrivepattern/utils/constants/colors.dart';
-import 'package:appdrivepattern/utils/constants/image_strings.dart';
-import 'package:appdrivepattern/utils/constants/sizes.dart';
+import 'package:appdrivepattern/features/auth/screens/signup/widget/singup_form.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
+import '../../../../common/login_singup/auth_divider.dart';
+import '../../../../common/login_singup/auth_footer_SocialButtons.dart';
 import '../../../../common/login_singup/bottom_acc_text_with_btn.dart';
 import '../../../../common/login_singup/head_image_title.dart';
+import '../../../../utils/constants/colors.dart';
+import '../../../../utils/constants/image_strings.dart';
+import '../../../../utils/constants/sizes.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class SignupScreen extends StatelessWidget {
+  const SignupScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,29 +23,27 @@ class LoginScreen extends StatelessWidget {
             HeadSectionWithImage(
                 isBackBtnVisible: true,
                 image: RImages.logo,
-                bottomTitle: 'Login bei ADHDrive'),
-        
+                bottomTitle: 'Account erstellen'),
+
             /// login form field
-            const LoginForm(),
-        
+            const SingUpForm(),
+
             ///
             const AuthDivider(
               dividerText: 'oder',
             ),
-        
+
             /// other login
             const SizedBox(height: RSizes.spaceBtwSections/2),
-        
+
             ///
             const FooterSocialButtons(),
-        
+
             /// don't have a account
             BottomAccountTextWithButton(
               title: 'Du hast noch keinen Account?',
               subTitleBtn: 'Jetzt erstellen',
-              onPressed: () {
-                Get.off(()=> const SignupScreen());
-              },
+              onPressed: () {},
             ),
           ],
         ),
