@@ -31,7 +31,7 @@ class CommonTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(8)),
         boxShadow: [
           BoxShadow(

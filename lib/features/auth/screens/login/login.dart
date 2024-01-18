@@ -26,21 +26,21 @@ class LoginScreen extends StatelessWidget {
                 isBackBtnVisible: true,
                 image: RImages.logo,
                 bottomTitle: 'Login bei ADHDrive'),
-        
+
             /// login form field
             const LoginForm(),
-        
+
             ///
             const AuthDivider(
               dividerText: 'oder',
             ),
-        
+
             /// other login
             const SizedBox(height: RSizes.spaceBtwSections/2),
-        
+
             ///
             const FooterSocialButtons(),
-        
+
             /// don't have a account
             BottomAccountTextWithButton(
               title: 'Du hast noch keinen Account?',
